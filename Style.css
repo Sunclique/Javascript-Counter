@@ -24,11 +24,11 @@ h1{
 }
 button{
   height: 30px;
-background-color: #150E63;
+background-color: #0d2c54;
 color: white;
 border-radius: 3px;
-border-block-color:  #150E63;
-border-left-color:  #150E63;
+border-block-color: #0d2c54;
+border-left-color: #0d2c54;
 box-shadow: 1px 2px 1.7px 1.7px  #27272F ;
 
 }
