@@ -5,13 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>HTML</title>
+  <title>SideHustle Week 3 Task: Javascript Counter</title>
   
   <!-- HTML -->
   
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -29,26 +29,28 @@ let counterPlusElem = document.querySelector('.counter-plus');
 
 let count = 0;
 
-updateDisplay();
+UpdateTheDisplay();
 
 counterPlusElem.addEventListener("click",()=>{
     count++;
-    updateDisplay();
+    UpdateTheDisplay();
 }) ;
 
 counterMinusElem.addEventListener("click",()=>{
     count--;
-    updateDisplay();
+    UpdateTheDisplay();
 });
 
-function updateDisplay(){
+function UpdateTheDisplay(){
     counterDisplayElem.innerHTML = count;
     if(count <= -1){
+      alert('You have reached the minimum limit!')
       count = 0 ;
       counterDisplayElem.innerHTML = count;
        }
     if(count >= 51){
-      count = 50 ;
+         alert('You have reached the maximum limit!')
+         count=50
       counterDisplayElem.innerHTML = count;
        }
     }
