@@ -47,12 +47,12 @@ counterMinusElem.addEventListener("click",()=>{
 function UpdateTheDisplay(){
     counterDisplayElem.innerHTML = count;
     if(count <= -1){
-      alert('Error!')
+      alert('Error! Counter cannot go below 0!')
       count = 0 ;
       counterDisplayElem.innerHTML = count;
        }
     if(count >= 51){
-         alert('Error!')
+         alert('Error! Counter cannot exceed 50!')
          count=50;
       counterDisplayElem.innerHTML = count;
        }
