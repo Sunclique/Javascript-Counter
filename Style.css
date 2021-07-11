@@ -11,9 +11,6 @@ body {
   
 }
 
-
-
-
 .center {
   text-align: center;
   margin: auto;
@@ -42,12 +39,5 @@ border-radius: 3px;
 border-block-color: #0d2c54;
 border-left-color: #0d2c54;
 box-shadow: 1px 2px 1.7px 1.7px  #27272F ;
+}
 
-}
-h6{
-  font-size: 15.5pt;
-  text-align: center;
-  color: black;
-  background-color: black;
-  
-}
