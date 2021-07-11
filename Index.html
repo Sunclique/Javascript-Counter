@@ -21,10 +21,18 @@
 <h1 class="counter-display">(..)</h1>
   <button class="counter-minus">LOWER COUNT</button> <br>
   <button class="counter-plus">ADD COUNT</button>
-  </div>
-   <h6>
-      <a href="https://github.com/Sunclique/Javascript-Counter/">TO GITHUB</a>.
-   </h>
+  
+   
+     <div class="link">
+      <a href="https://github.com/Sunclique/Javascript-Counter/" target="_blank">
+        <img src="github.svg" alt="GITHUB">
+      </a>
+      </div>
+      </div>
+
+      
+      
+   
   <script>
   let counterDisplayElem = document.querySelector('.counter-display');
 let counterMinusElem = document.querySelector('.counter-minus');
@@ -47,12 +55,12 @@ counterMinusElem.addEventListener("click",()=>{
 function UpdateTheDisplay(){
     counterDisplayElem.innerHTML = count;
     if(count <= -1){
-      alert('Error! Counter cannot go below 0!')
+      alert('You have reached the minimum limit!')
       count = 0 ;
       counterDisplayElem.innerHTML = count;
        }
-    if(count >= 51){
-         alert('Error! Counter cannot exceed 50!')
+    if(count >= 50){
+         alert('You have reached the maximum limit!')
          count=50;
       counterDisplayElem.innerHTML = count;
        }
