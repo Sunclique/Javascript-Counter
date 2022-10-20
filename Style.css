@@ -3,6 +3,7 @@ body {
     background-image:url("background.jpg");
     background-size: cover;
     background-attachment: fixed;
+    overflow: hidden;
 }
 .link {
   width: 30px;
