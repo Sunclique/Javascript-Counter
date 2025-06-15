@@ -1,44 +1,82 @@
 body {
-    font-size: 25pt;
-    background-image:url("background.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    overflow: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1.5rem;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  min-height: 100vh;
+  color: #222;
+  overflow-x: hidden;
 }
+
 .link {
-  width: 30px;
-  margin: auto;
-  padding-top: 20px;
-  
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.link img {
+  width: 36px;
+  vertical-align: middle;
+  filter: grayscale(0.3);
+  transition: filter 0.2s;
+}
+
+.link img:hover {
+  filter: grayscale(0) drop-shadow(0 0 6px #228B22);
 }
 
 .center {
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 28px 56px 0 rgba(0, 0, 0, 0.55),     /* Strong, deep black bottom shadow */
+    -18px 0 36px -8px rgba(0, 0, 0, 0.22), /* More pronounced left shadow */
+    18px 0 36px -8px rgba(0, 0, 0, 0.22);  /* More pronounced right shadow */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  max-width: 400px;
+  margin: 60px auto 0;
+  padding: 2.5rem 2rem 2rem;
   text-align: center;
-  margin: auto;
-  margin-top: 27px;
-  width: 60%;
-  height: 320px;
-  border: 1px solid #FDFDFF;
-  padding: 10%;
-  box-shadow: 1px 5px 5px 5px  #27272F ;
 }
 
 h4 {
-  color: white;
-  margin: auto;
+  color: #222;
+  margin-bottom: 0.7rem;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
-h1{
-  color: darkgreen;
-  
 
+.counter-display, h1 {
+  color: #228B22;
+  font-size: 3rem;
+  margin: 1.2rem 0;
+  font-weight: bold;
 }
-button{
-  height: 30px;
-background-color: #0d2c54;
-color: white;
-border-radius: 3px;
-border-block-color: #0d2c54;
-border-left-color: #0d2c54;
-box-shadow: 1px 2px 1.7px 1.7px  #27272F ;
+
+button, .counter-btn {
+  height: 40px;
+  min-width: 120px;
+  background-color: #0d2c54;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  margin: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(39,39,47,0.10);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:active, .counter-btn:active {
+  background-color: #092043;
+  transform: scale(0.97);
+}
+
+button:focus, .counter-btn:focus {
+  outline: 2px solid #228B22;
+  outline-offset: 2px;
 }
 

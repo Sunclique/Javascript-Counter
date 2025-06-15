@@ -4,63 +4,104 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>SideHustle Week 3 Task: Javascript Counter</title>
-  
-  <!-- HTML -->
-  
-
-  <!-- Custom Styles -->
+  <title>JavaScript Counter</title>
   <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-  <div class="center">
-    <h4> COUNTER </h4>
-<h1 class="counter-display">(..)</h1>
-  <button class="counter-minus">LOWER COUNT</button> <br>
-  <button class="counter-plus">ADD COUNT</button>
-  </div>
-   
-     <div class="link">
-      <a href="https://github.com/Sunclique/Javascript-Counter/" target="_blank">
-        <img src="github.svg" alt="GITHUB">
-      </a>
-      </div>
-   
-  <script>
-  let counterDisplayElem = document.querySelector('.counter-display');
-let counterMinusElem = document.querySelector('.counter-minus');
-let counterPlusElem = document.querySelector('.counter-plus');
-
-let count = 0;
-
-UpdateTheDisplay();
-
-counterPlusElem.addEventListener("click",()=>{
-    count++;
-    UpdateTheDisplay();
-}) ;
-
-counterMinusElem.addEventListener("click",()=>{
-    count--;
-    UpdateTheDisplay();
-});
-
-function UpdateTheDisplay(){
-    counterDisplayElem.innerHTML = count;
-    if(count <= -1){
-      alert('Error! You cannot go below 0!')
-      count = 0 ;
-      counterDisplayElem.innerHTML = count;
-       }
-    if(count >= 51){
-         alert('Error! You cannot go above 50!')
-         count=50;
-      counterDisplayElem.innerHTML = count;
-       }
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+    
+      margin: 0;
+      padding: 0;
     }
+    
+    h4 {
+      margin-bottom: 0.5rem;
+      color: #333;
+      letter-spacing: 2px;
+    }
+    .counter-display {
+      font-size: 3rem;
+      margin: 1rem 0;
+      color: #0078d7;
+      font-weight: bold;
+    }
+    .counter-btn {
+      padding: 0.7rem 1.5rem;
+      margin: 0.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #0078d7;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .counter-btn:active {
+      background: #005fa3;
+    }
+    .error-message {
+      color: #d8000c;
+      margin-top: 0.5rem;
+      min-height: 1.2em;
+      font-size: 1rem;
+      transition: opacity 0.3s;
+    }
+    .link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .link img {
+      width: 36px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <h4>COUNTER</h4>
+    <div class="counter-display" aria-live="polite">0</div>
+    <button class="counter-btn" id="decrement" aria-label="Decrease counter">LOWER COUNT</button>
+    <button class="counter-btn" id="increment" aria-label="Increase counter">ADD COUNT</button>
+    <div class="error-message" id="error"></div>
+  </div>
+  <div class="link">
+    <a href="https://github.com/Sunclique/Javascript-Counter/" target="_blank" rel="noopener">
+      <img src="github.svg" alt="GitHub">
+    </a>
+  </div>
+  <script>
+    const counterDisplay = document.querySelector('.counter-display');
+    const decrementBtn = document.getElementById('decrement');
+    const incrementBtn = document.getElementById('increment');
+    const errorMsg = document.getElementById('error');
+    let count = 0;
+    const MIN = 0;
+    const MAX = 50;
+
+    function updateDisplay() {
+      counterDisplay.textContent = count;
+      errorMsg.textContent = '';
+    }
+
+    incrementBtn.addEventListener('click', () => {
+      if (count < MAX) {
+        count++;
+        updateDisplay();
+      } else {
+        errorMsg.textContent = `You cannot go above ${MAX}!`;
+      }
+    });
+
+    decrementBtn.addEventListener('click', () => {
+      if (count > MIN) {
+        count--;
+        updateDisplay();
+      } else {
+        errorMsg.textContent = `You cannot go below ${MIN}!`;
+      }
+    });
+
+    updateDisplay();
   </script>
 </body>
 </html>
